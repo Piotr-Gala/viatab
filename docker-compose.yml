@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: viatab-postgres-compose
+    environment:
+      POSTGRES_DB: viatab
+      POSTGRES_USER: viatab
+      POSTGRES_PASSWORD: viatab
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: viatab-backend-compose
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/viatab
+      SPRING_DATASOURCE_USERNAME: viatab
+      SPRING_DATASOURCE_PASSWORD: viatab
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    container_name: viatab-frontend-compose
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres-data:
