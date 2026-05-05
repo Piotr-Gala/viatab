@@ -9,7 +9,7 @@ type Story = {
   department: string;
 };
 
-const API_URL = "http://localhost:8080/api/stories";
+const API_URL = "/api/stories";
 
 function App() {
   const [stories, setStories] = useState<Story[]>([]);
