@@ -1,0 +1,68 @@
+.app {
+  min-height: 100vh;
+  background: #f4f6f8;
+  color: #17202a;
+  padding: 32px;
+}
+
+.panel {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+.story-form {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid #ccd3dc;
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+  background: #1f6feb;
+  border-color: #1f6feb;
+  color: white;
+}
+
+.story-list {
+  display: grid;
+  gap: 12px;
+}
+
+.story-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: white;
+  border: 1px solid #dde3ea;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.story-card h2 {
+  margin: 4px 0 8px;
+}
+
+.department {
+  margin: 0;
+  color: #596579;
+  font-size: 14px;
+}
